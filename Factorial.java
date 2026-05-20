@@ -1,9 +1,9 @@
-// V2: Implementación recursiva
+import java.util.stream.LongStream;
+// V3: Implementación funcionalv
 public class Factorial {
  public static long calcular(int n) {
- if (n <= 1) {
- return 1;
- }
- return n * calcular(n - 1);
+ return LongStream
+ .rangeClosed(1, n)
+ .reduce(1, (a, b) -> a * b);
  }
 }
